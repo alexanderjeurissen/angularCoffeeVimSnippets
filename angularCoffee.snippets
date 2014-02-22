@@ -1,0 +1,18 @@
+# angular directive snippet
+snippet ngdir
+	'use strict'
+	angular.module('${1:appName}').directive '${2:directiveName}', [
+		'${3:injectService}'
+		(${4:injectService}) ->
+		return (
+			restrict: '${5:restrictType}'
+			scope:
+				${6://scopeVariables}
+			controller: ${7://controller}
+			transclude: ${8://transclude?}
+			templateUrl: '${9://templateUrl}'
+			link: (scope, element, attrs) ->
+				${10://link content here}
+				return
+		 )
+	]

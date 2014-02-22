@@ -42,3 +42,38 @@ snippet ngdlink
 	link: (scope, element , attrs) ->
 		${2://content}
 
+# angular controller snippets
+snippet ngctrl
+	angular.module('${1:appName}').controller '${2:controllerName}', [
+		'$scope'
+		'$routeParams'
+		'$location'
+		'${3:injectService}'
+		 $2 = ($scope, $routeParams, $location, $3) ->
+			${4://content}
+	]
+
+snippet ngcf
+	$scope.${1:functionName} = (${2:args}) ->
+		${3}
+
+snippet ngcv
+	$scope.${1:variable} = ${2:value/variable};
+		${3}
+
+snippet ngcw
+	$scope.$watch '${1:watchExpr}', (newValue, oldValue) ->
+		${2}
+
+snippet ngco
+	$scope.$on '${1:event}', (event, ${2:args}) ->
+		${3}
+
+snippet ngcb
+	$scope.$broadcast '${1:event}', ${2:eventArgs}
+		${3}
+
+snippet ngce
+	$scope.$emit '${1:event}', ${2:eventArgs}
+		${3}
+

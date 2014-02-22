@@ -1,0 +1,84 @@
+# angular directive snippets
+snippet ngdir
+	'use strict'
+	angular.module('${1:appName}').directive '${2:directiveName}', [
+		'${3:injectService}'
+		(${4:injectService}) ->
+		return (
+			restrict: '${5:restrictType}'
+			scope:
+				${6://scopeVariables}
+			controller: ${7://controller}
+			transclude: ${8://transclude?}
+			templateUrl: '${9://templateUrl}'
+			link: (scope, element, attrs) ->
+				${10://link content here}
+				return
+		 )
+	]
+
+snippet ngdrest
+	restrict: '${1:restrictType}'${2}
+
+snippet ngdscope
+	scope:
+		${1:scopeVar}: '${2:@/=/&}'${3}
+
+snippet ngdcomp
+	compile: (tElement, tAtrs, transclude) ->
+		(scope, element, attrs) ->
+			${1://content}
+
+snippet ngdctrl
+	controller: '${1://controller}'${2}
+
+snippet ngdtrans
+	transclude: ${1:true/false}
+
+snippet ngdtemp
+	templateUrl: '${1:templateUrl}'${2}
+
+snippet ngdlink
+	link: (scope, element , attrs) ->
+		${2://content}
+
+# angular controller snippets
+snippet ngctrl
+	angular.module('${1:appName}').controller '${2:controllerName}', [
+		'$scope'
+		'$routeParams'
+		'$location'
+		'${3:injectService}'
+		 $2 = ($scope, $routeParams, $location, $3) ->
+			${4://content}
+	]
+
+snippet $f
+	$scope.${1:functionName} = (${2:args}) ->
+		${3}
+
+snippet $v
+	$scope.${1:variable} = ${2:value};
+		${3}
+
+snippet $va
+	$scope.${1:variable} = ${2:variable};
+		${3}
+
+snippet $w
+	$scope.$watch '${1:watchExpr}', (newValue, oldValue) ->
+		${2}
+
+snippet $on
+	$scope.$on '${1:eventName}', (event, ${2:args}) ->
+		${3}
+
+snippet $b
+	$scope.$broadcast '${1:eventName}', ${2:eventArgs}
+		${3}
+
+snippet $e
+	$scope.$emit '${1:eventName}', ${2:eventArgs}
+		${3}
+
+

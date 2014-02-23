@@ -42,3 +42,22 @@ snippet ngdlink
 	link: (scope, element , attrs) ->
 		${2://content}
 
+# angular service snippets
+snippet ngserv
+	angular.module('${1:appName}').service '${2:serviceName}', [
+		'${3:injectService}'
+		($3) ->
+			${4://private & helper functions}
+			return (
+				${5://public functions}
+			)
+	]
+
+snippet ngspriv
+	${1:privateFunctionName} = (${2:attrs}) ->
+		${3://content}
+
+snippet ngspub
+	${1:publicFunctionName}: (${2:attrs}) ->
+		${3://content}
+
